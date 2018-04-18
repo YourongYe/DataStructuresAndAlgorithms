@@ -16,7 +16,7 @@
 3. List related
 4. Divide and Conquer
 5. Sorting
-6. Back tracing
+6. Back Tracing
 7. Recursion
 8. 2Sum 3Sum
 9. Graph
