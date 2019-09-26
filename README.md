@@ -1,8 +1,8 @@
 # DataStructuresAndAlgorithms
 
 ### Data Structures
-1. Array
-2. List
+1. Array(vector)
+2. List(linked-list)
 3. Queue
 4. Stack
 5. Binary Tree
