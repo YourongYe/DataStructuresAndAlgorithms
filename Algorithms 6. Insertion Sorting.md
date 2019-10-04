@@ -6,8 +6,8 @@ Although it's insert, it does not necessarily mean insert one element and shift 
 Two methods are shown: Swap and shift
 
 # Difference between Insertion Sort and Bubble Sort
-Bubble sort: 每次循环没有明确的目标，就是在途中遇到的最大的值会被挪到最后
-Insertion sort：每次outter iteration都有target，就是第i个element，目的是把第i个element挪到right position
+Bubble sort: 每次循环没有明确的目标，就是在途中遇到的最大的值会被挪到最后  
+Insertion sort：每次outter iteration都有target，就是第i个element，目的是把第i个element挪到right position  
 
 # Example
 ```py
@@ -33,7 +33,7 @@ def insertionSort1(A):
         A[j+1] = temp_num # 当inner iteration结束，一定要把target值放回right position
     return A
     
-# 下面这种
+# 下面这种写法在inner iteration时会节约大概一般的时间
 
 B = [10,9,8,7,6,5,4,3,2,1]
 
@@ -43,4 +43,12 @@ print('Swap using time: ', time.time()-start)
 start = time.time()
 print(insertionSort1(B))
 print('Shift using time: ', time.time()-start)
+```
+
+# Result
+```py
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Swap using time:  5.817413330078125e-05
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Shift using time:  8.821487426757812e-06
 ```
