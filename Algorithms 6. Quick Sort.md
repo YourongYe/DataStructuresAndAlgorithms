@@ -83,11 +83,14 @@ the function called times will be reduced, save nearly half of time
 
 def QuickSort(A, start, end):
     print(A)
-    while start < end:
+    while start < end: # here changes into 'while' rather than 'if'
         pIndex = Partition(A, start, end)
         QuickSort(A, start, pIndex-1)
         start = pIndex + 1
 ```
+In the first version using 'if', the function called times increase exponentially  
+But for the second version using 'while', multiple times of partition can be done in the same QuickSort function.  
+The partition times might be the same, but part of stack space will be released due to less recursion.
 
 # Result
 ```py
