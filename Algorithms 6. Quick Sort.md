@@ -24,6 +24,12 @@ def QuickSort(A, start, end):
         pIndex = Partition(A, start, end)
         QuickSort(A, start, pIndex-1)
         QuickSort(A, pIndex+1, end)
+        
+A = [20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]
+# A = [7,3,8,5,4,6]
+start = time.time()
+QuickSort(A, 0, 19)
+print(time.time()-start)
 ```
 
 # Result
@@ -71,6 +77,8 @@ def QuickSort(A, start, end):
 ```
 
 # A faster QuickSort function
+If we change a little bit in QuickSort function, with the same partition function  
+the function called times will be reduced, save nearly half of time
 ```py
 
 def QuickSort(A, start, end):
