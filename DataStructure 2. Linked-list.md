@@ -56,8 +56,8 @@ class LinedList:
 
     def append(self, data):
         new_node = Node(data)
-        cur = self.head
-        while cur.next != None:
+        cur = self.head 
+        while cur.next != None: # 注意这里的cur是current node，不是pointer，和C++不同，所以一定要判断成cur.next是否为空，而不是cur本身
             cur = cur.next
         cur.next = new_node
 
