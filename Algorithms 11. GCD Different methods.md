@@ -76,3 +76,22 @@ print(a)
 4
 ```
 
+## Iteration
+```py
+def CommonDivisor_iteration(m, n):
+    m, n = max(m,n), min(m,n)
+    while m % n != 0:
+        print(m,n)
+        n, m = m%n, min(m, n)
+    return n
+
+
+a = CommonDivisor_iteration(32,36)
+print(a)
+```
+
+## Result
+```py
+36 32
+4
+```
