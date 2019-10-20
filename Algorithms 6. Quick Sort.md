@@ -14,7 +14,7 @@ def Partition(A, start, end):
     for i in range(start, end):
         if A[i] < pivot:
             A[i], A[pIndex] = A[pIndex], A[i]
-            pIndex += 1
+            pIndex += 1 # pIndex左边都是比pivot小的数
     A[pIndex], A[end] = A[end], A[pIndex]
     return pIndex
 
