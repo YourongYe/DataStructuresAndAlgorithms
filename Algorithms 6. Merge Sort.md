@@ -1,9 +1,11 @@
+# Implementation
 ```py
 def MergeSort(array):
     if len(array) > 1:
         middle_index = len(array)//2 # 找到一个中点来break成两部分
         leftside = MergeSort(array[:middle_index]) # 和quicksort不同在于，每一次recursion都create了两个新的list
         rightside = MergeSort(array[middle_index:])
+        print(leftside,rightside)
         return Merge(leftside, rightside)
     else:
         return array
@@ -28,4 +30,15 @@ def Merge(leftside, rightside):
 
 array = [8,7,6,5,4,3,2,1]
 print(MergeSort(array))
+```
+# Result
+```py
+[8] [7]
+[6] [5]
+[7, 8] [5, 6]
+[4] [3]
+[2] [1]
+[3, 4] [1, 2]
+[5, 6, 7, 8] [1, 2, 3, 4]
+[1, 2, 3, 4, 5, 6, 7, 8]
 ```
