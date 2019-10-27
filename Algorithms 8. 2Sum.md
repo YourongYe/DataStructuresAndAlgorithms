@@ -1,4 +1,5 @@
 # Brute Force
+```py
 def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -9,9 +10,10 @@ def twoSum(self, nums, target):
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-
+```
 
 # Two-pass Hash Table
+```py
 def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -25,8 +27,9 @@ def twoSum(self, nums, target):
             complement = target - nums[i]
             if complement in dic.keys() and dic[complement] != i:
                 return [i, dic[complement]]
-
+```
 # One-pass Hash Table (most efficient both time and space complexity)
+```py
 def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -39,5 +42,5 @@ def twoSum(self, nums, target):
                 return [i, dic[nums[i]]]
             complement = target - nums[i]
             dic[complement] = i
-            
-            
+                    
+  ```          
