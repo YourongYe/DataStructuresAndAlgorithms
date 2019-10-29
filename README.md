@@ -22,3 +22,4 @@
 9. Graph
 10. Dynamic Programming
 11. GCD: Greatest Common Divisor
+12. Greedy Algorithm
