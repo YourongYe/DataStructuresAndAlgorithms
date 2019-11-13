@@ -27,3 +27,19 @@ def binomialCoef1(n, k):
     return array[-1]
 
 print(binomialCoef1(10,5))
+
+
+# 优化版
+def binomialCoef1(n, k):
+    if n == k:
+        return 1
+    if n-k < k:
+        k = n-k
+    array = [1] + [0]*(k-1)
+    for i in range(n-1):
+        temp = 1
+        for j in range(0,k):
+            temp, array[j] = array[j], array[j] + temp
+    return array[-1]
+
+print(binomialCoef1(10,5))
