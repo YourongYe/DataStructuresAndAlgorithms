@@ -93,3 +93,53 @@ class LinedList:
 2
 4
 ```
+# Reverse Linked List
+## using stack
+```py
+def reverseList(self, head: ListNode) -> ListNode:
+    l1 = []
+    temp = head
+    while temp != None:
+        l1.append(temp.val)
+        temp = temp.next
+    temp = head
+    while temp != None:
+        temp.val = l1.pop()
+        temp = temp.next
+    return head
+        
+```
+
+## using pointers and in-place reverse
+```py
+def reverseList(self, head: ListNode) -> ListNode:
+    curr = head
+    next = curr
+    prev = None
+    while curr != None:
+        next = next.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    head = prev
+    return head
+```
+
+## recursion (stack思路)
+```py
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if head == None or head.next == None:
+            newhead = head
+            return newhead
+        newhead = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return newhead
+```
+
+## recursion (iteration类似思路)
+```py
+
+```
+        
