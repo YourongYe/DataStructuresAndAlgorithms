@@ -141,7 +141,7 @@ class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if head == None or head.next == None:
             newhead = head
-            return newhead
+            return newhead # newhead 从return开始就不会变，一直从最里层recursion带到最外层
         newhead = self.reverseList(head.next)
         head.next.next = head
         head.next = None
@@ -150,6 +150,14 @@ class Solution:
 
 ## recursion (iteration类似思路)
 ```py
-
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        def innerReverse(prev, head):
+            if head == None:
+                return prev
+            next_node = head.next
+            head.next = prev
+            return innerReverse(head, next_node)
+        return innerReverse(None, head)
 ```
         
