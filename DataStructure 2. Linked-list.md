@@ -1,4 +1,14 @@
 # Linked-list simple implementation 
+## C++ implementation
+## Python implementation
+
+# Recursion 
+## Stack (extra memory)
+## Iteration (in-place)
+## Recursion (stack)
+## Recursion (iteration)
+
+# Linked-list simple implementation 
 
 ## C++ version
 ```cpp
