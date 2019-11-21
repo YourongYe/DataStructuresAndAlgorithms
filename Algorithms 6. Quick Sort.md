@@ -6,6 +6,10 @@ and all that > pivot to the right.
 
 Although it is in-place, taking no extra space for new variables, the recursive functions will take lots of stack space. 
 
+# Time Complexity
+**Best case & Average cases: O(nlogn)**  
+**Worst case: O(n<sup>2<\sup>)**
+
 # Example
 ```py
 def Partition(A, start, end):
