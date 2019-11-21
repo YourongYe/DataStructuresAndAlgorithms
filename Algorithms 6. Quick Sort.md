@@ -32,6 +32,22 @@ QuickSort(A, 0, 19)
 print(time.time()-start)
 ```
 
+# Another partition implementation
+```py
+def Partition(l1, start, end):
+    pivot = l1[end]
+    left = start
+    right = end - 1
+    while left <= right:
+        while (l1[left] < pivot) and (left <= end):
+            left += 1
+        while (l1[right] > pivot) and (right >= start):
+            right -= 1
+        if left < right:
+            l1[left], l1[right] = l1[right], l1[left]
+    l1[left], l1[end] = l1[end], l1[left]
+    return left
+```
 # Result
 ```py
 [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
