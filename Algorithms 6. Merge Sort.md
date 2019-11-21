@@ -42,3 +42,37 @@ print(MergeSort(array))
 [5, 6, 7, 8] [1, 2, 3, 4]
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
+
+# In-place
+```py
+def mergeSort(numlist):
+    if len(numlist) > 1:
+        mid = len(numlist)//2
+        leftlist = numlist[:mid]
+        rightlist = numlist[mid:]
+        mergeSort(leftlist)
+        mergeSort(rightlist)
+    
+        i = j = k = 0
+        while (i < len(leftlist)) and (j < len(rightlist)):
+            if leftlist[i] < rightlist[j]:
+                print(leftlist, rightlist)
+                numlist[k] = leftlist[i]
+                i += 1
+            else:
+                numlist[k] = rightlist[j]
+                j += 1
+            k += 1
+        while i < len(leftlist):
+            numlist[k] = leftlist[i]
+            k += 1
+            i += 1
+        while j < len(rightlist):
+            numlist[k] = rightlist[j]
+            k += 1
+            j += 1
+            
+    
+l1 = [3,7,4,8,5,1,6,2]
+mergeSort(l1)
+```
