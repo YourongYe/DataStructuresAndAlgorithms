@@ -8,7 +8,7 @@ Although it is in-place, taking no extra space for new variables, the recursive 
 
 # Time Complexity
 **Best case & Average cases:** O(nlogn)   
-**Worst case:** O(n<sup>2<\sup>)  
+**Worst case:** O(n<sup>2</sup>)  
 
 ## Way to improve and avoid worst case: 
 **Rrandomised Quicksort**  
