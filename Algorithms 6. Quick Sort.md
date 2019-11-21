@@ -7,8 +7,13 @@ and all that > pivot to the right.
 Although it is in-place, taking no extra space for new variables, the recursive functions will take lots of stack space. 
 
 # Time Complexity
-**Best case & Average cases: O(nlogn)**  
-**Worst case: O(n<sup>2<\sup>)**
+**Best case & Average cases:** O(nlogn)   
+**Worst case:** O(n<sup>2<\sup>)  
+
+## Way to improve and avoid worst case: 
+**Rrandomised Quicksort**  
+By randomly choosing the pivot, instead of choosing the last element, we can increase the chance of a balanced quicksort.  
+One way to do it, is to choose the median as the pivot, and switch it with the last element, other things being equal.
 
 # Example
 ```py
