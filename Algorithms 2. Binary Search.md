@@ -1,5 +1,5 @@
 # Example with recursion
-```
+```py
 def binarySearch(array, start_ind, end_ind, number):
     mid = (start_ind + end_ind)//2
     if number == array[mid]:
@@ -19,7 +19,7 @@ print(binarySearch(array, 0, len(array)-1, 11))
 ```
 
 # Result
-```
+```py
 6
 8
 -1
