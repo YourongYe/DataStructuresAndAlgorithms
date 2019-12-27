@@ -23,3 +23,5 @@
 10. Dynamic Programming
 11. GCD: Greatest Common Divisor
 12. Greedy Algorithm
+13. BFS
+14. DFS
