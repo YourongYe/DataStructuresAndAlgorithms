@@ -7,8 +7,9 @@
 4. Stack
 5. Binary Tree
 6. Hashtable
-7. Priority Queue
+7. Priority Queue (Heap Queue)
 8. Deque
+9. Heap
 
 ### Algorithms
 1. Two Pointer
