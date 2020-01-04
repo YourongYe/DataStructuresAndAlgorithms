@@ -8,7 +8,7 @@
 5. Binary Tree
 6. Hashtable
 7. Priority Queue (Heap Queue)
-8. Deque
+8. Deque (Double ended queue)
 9. Heap
 
 ### Algorithms
