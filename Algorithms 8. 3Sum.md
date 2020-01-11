@@ -1,16 +1,15 @@
-# Sort + Hashtable （只适用于sum=0的情况）
+# Hashtable + Sort （只适用于sum=0的情况，sort只是辅助算法）
 ```py
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
-        nums.sort()
         counter = collections.Counter(nums)
         if 0 in counter and counter[0] >= 3:
             res.append([0,0,0])
         
-        pos = [n for n in counter if n > 0]
-        neg = [n for n in counter if n < 0]
-        neg.sort() # 这是辅助算法，可以提高time efficiency
+        pos = [n for n in counter if n > 0] # 注意这里的pos和neg可以是乱序的，下面的条件会限制住他们的重复可能性
+        neg = [n for n in counter if n < 0] # split其实也起到了sort的作用，只不过是隐性的
+        neg.sort() # 这是辅助算法，可以提高time efficiency，可以删除
         
         for p in pos:
             for n in neg:
@@ -18,7 +17,7 @@ class Solution:
                 if rem in counter:
                     if (rem == p or rem == n) and (counter[rem] >= 2):
                         res.append([rem, p, n])
-                    elif n < rem < p:
+                    elif n < rem < p: # 这个地方的规定避免了重复，而不是说只要三个数加和=0就要append进res
                         res.append([rem, p, n])
                     elif rem < n: # 这两行为辅助算法部分，删除也不会错，只是会慢一些
                         break
