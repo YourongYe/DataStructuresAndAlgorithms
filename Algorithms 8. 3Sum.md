@@ -29,12 +29,12 @@ class Solution:
 ```py
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
+        nums.sort() # 必须要先sort
         res = []
         target = 0 
-        while target < len(nums)-2:
-            front = target + 1
-            back = len(nums) - 1
+        while target < len(nums)-2: # target即是选定的第一个数
+            front = target + 1 # 接下来根据target来用two pointer确定另外两个数
+            back = len(nums) - 1 # 一个从前开始，一个从后开始
             while front < back:
                 sub_sum = nums[front] + nums[back]
                 if sub_sum > -nums[target]:
@@ -42,17 +42,19 @@ class Solution:
                 elif sub_sum < -nums[target]:
                     front += 1
                 else:
-                    triplet = [nums[target], nums[front], nums[back]]
-                    res.append(triplet)
-                    while front < back and nums[front] == triplet[1]: front += 1
+                    triplet = [nums[target], nums[front], nums[back]] 
+                    res.append(triplet) # 当三个数加和为0时，将结果append进去
+                    # 这里是为了去掉front和back重复，一个从前，一个从后
+                    while front < back and nums[front] == triplet[1]: front += 1 
                     while front < back and nums[back] == triplet[2]: back -= 1
+            # 这里是检验target的重复
             while (target+1 < len(nums)) and (nums[target] == nums[target+1]):
                 target += 1
-            target += 1
+            target += 1 # 一个loop完成，target移到下一个数
         return res
 ```
 
-#总结
+# 总结
 题型： 寻找所有符合某个条件的subarray，要全部列举并且return  
 做法： 这种题型的重点是要穷尽所有可能，并且不能重复 （所以一般来讲，都要sort）  
 有时，题型也有变种，例如简单地，只是让我count所有可能结果；或者return 第一个符合条件的index之类的；做法可能会不同  
