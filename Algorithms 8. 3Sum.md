@@ -1,4 +1,4 @@
-# Sort + Hashtable
+# Sort + Hashtable （只适用于sum=0的情况）
 ```py
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -25,7 +25,7 @@ class Solution:
         return res
 ```
 
-# Sort + Two Pointers
+# Sort + Two Pointers （适合所有3sum）
 ```py
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -51,3 +51,10 @@ class Solution:
             target += 1
         return res
 ```
+
+#总结
+题型： 寻找所有符合某个条件的subarray，要全部列举并且return  
+做法： 这种题型的重点是要穷尽所有可能，并且不能重复 （所以一般来讲，都要sort）  
+有时，题型也有变种，例如简单地，只是让我count所有可能结果；或者return 第一个符合条件的index之类的；做法可能会不同  
+这种subarray题型中，列举所有可能的结果是最难的（不能重复的更更难）  
+在列举之前，一定要有规定，比如只有在符合某些条件的情况下，才会将结果append到res中
