@@ -16,3 +16,13 @@ hashtable有一种常见题型就是，先count或者统计，然后需要以val
 当然还有其他的方式，如果是要sort value，可以用bucket sort。
 
 bucket sort的本质是用一个空的list，根据elements的某种属性来放置，然后再依次把list 里的值提出来。
+
+# OrderedDict in Python
+是一种特殊的dictionary，是一个有序的hashtable，顺序由insert的先后来决定（类似queue）  
+用法：  
+```py
+dict1 = collections.OrderedDict() # 初始化  
+dict1[key] = value  # insert
+dict1.move_to_end(key) # move the key to the end of the queue (手动把中间的keymove到最后，因为如果只是把一个existing key对应的value改了，key的位置是不会变得，需要手动更新)
+dict1.popitem(last=False)  # 可以选择先insert的先pop（last=False）或者最后insert的先pop（last=True）
+```
